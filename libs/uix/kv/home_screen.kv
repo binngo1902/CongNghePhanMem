@@ -1,0 +1,74 @@
+#: import ScreenHangHoa libs.uix.baseclass.screen_hanghoa.ScreenHangHoa
+#: import ScreenNhapKho libs.uix.baseclass.screen_nhapkho.ScreenNhapKho
+#: import ScreenXuatKho libs.uix.baseclass.screen_xuatkho.ScreenXuatKho
+#: import ScreenDatHang libs.uix.baseclass.screen_dathang.ScreenDatHang
+#: import ScreenThongKe libs.uix.baseclass.screen_thongke.ScreenThongKe
+
+
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+<HomeScreen>
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 5
+        padding:5
+        MDBoxLayout:  
+            orientation: 'vertical'
+            size_hint: 1,0.1
+            spacing: 5
+            MDBoxLayout:
+                orientation: 'horizontal'
+                spacing: 10
+                size_hint: 1, 0.1   
+                Widget:
+                    size_hint_x: 0.2
+                MDRaisedButton:
+                    text: "[b]HÀNG HÓA[/b]"
+                    text_color: 66/255,66/255,66/255,1
+                    on_press: src_mng.current = "hanghoa"
+                MDRaisedButton:
+                    text: "[b]NHẬP KHO[/b]"
+                    text_color: 66/255,66/255,66/255,1
+                    on_press: src_mng.current = "nhapkho"
+
+                    
+                MDRaisedButton:
+                    text: "[b]ĐẶT HÀNG[/b]"
+                    text_color: 66/255,66/255,66/255,1
+                    on_press: src_mng.current = "dathang"
+
+                MDRaisedButton:
+                    text: "[b]XUẤT KHO[/b]"
+                    text_color: 66/255,66/255,66/255,1
+                    on_press: src_mng.current = "xuatkho"
+
+                MDRaisedButton:
+                    text: "[b]THỐNG KÊ[/b]"
+                    text_color: 66/255,66/255,66/255,1
+                    on_press: src_mng.current = "thongke"
+                
+
+                Widget:
+                    size_hint_x: 0.2
+        MDSeparator:
+        MDBoxLayout:
+            size_hint: 1,0.9
+            padding: 5
+            ScreenManager:
+                id: src_mng
+                transition: NoTransition()
+                MDScreen:
+                    name: "hanghoa"
+                    ScreenHangHoa:
+                MDScreen:
+                    name: "nhapkho"
+                    ScreenNhapKho:
+                MDScreen:
+                    name: "dathang"
+                    ScreenDatHang:
+                MDScreen:
+                    name: "xuatkho"
+                    ScreenXuatKho:
+                MDScreen:
+                    name: "thongke"
+                    ScreenThongKe:

@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "main.py", line 28, in <module>
+    CNPM().run()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 387, in idle
+    Clock.tick()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\clock.py", line 733, in tick
+    self.post_idle(ts, self.idle())
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\clock.py", line 776, in post_idle
+    self._process_events()
+  File "kivy\_clock.pyx", line 616, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 645, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
+  File "D:\Python\CNPM\libs\uix\baseclass\root.py", line 48, in add_screens
+    Builder.load_file(screen_details["kv"])
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\builder.py", line 306, in load_file
+    return self.load_string(data, **kwargs)
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\builder.py", line 373, in load_string
+    parser = Parser(content=string, filename=fn)
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 402, in __init__
+    self.parse(content)
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 508, in parse
+    self.execute_directives()
+  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 477, in execute_directives
+    mod = getattr(mod, part)
+AttributeError: module 'libs.uix.baseclass.screen_dathang' has no attribute 'ScreenDatHang'
