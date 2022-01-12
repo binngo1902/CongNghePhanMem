@@ -4,7 +4,7 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 
-import utils
+from libs.applibs import utils
 
 utils.load_kv("root.kv")
 

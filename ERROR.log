@@ -1,32 +1,72 @@
 Traceback (most recent call last):
   File "main.py", line 28, in <module>
     CNPM().run()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\app.py", line 950, in run
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\app.py", line 950, in run
     runTouchApp()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 582, in runTouchApp
     EventLoop.mainloop()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 347, in mainloop
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 347, in mainloop
     self.idle()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\base.py", line 387, in idle
-    Clock.tick()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\clock.py", line 733, in tick
-    self.post_idle(ts, self.idle())
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\clock.py", line 776, in post_idle
-    self._process_events()
-  File "kivy\_clock.pyx", line 616, in kivy._clock.CyClockBase._process_events
-  File "kivy\_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
-  File "kivy\_clock.pyx", line 645, in kivy._clock.CyClockBase._process_events
-  File "kivy\_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
-  File "D:\Python\CNPM\libs\uix\baseclass\root.py", line 48, in add_screens
-    Builder.load_file(screen_details["kv"])
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\builder.py", line 306, in load_file
-    return self.load_string(data, **kwargs)
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\builder.py", line 373, in load_string
-    parser = Parser(content=string, filename=fn)
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 402, in __init__
-    self.parse(content)
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 508, in parse
-    self.execute_directives()
-  File "C:\Users\binng\anaconda3\envs\kivy2\lib\site-packages\kivy\lang\parser.py", line 477, in execute_directives
-    mod = getattr(mod, part)
-AttributeError: module 'libs.uix.baseclass.screen_dathang' has no attribute 'ScreenDatHang'
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 391, in idle
+    self.dispatch_input()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 342, in dispatch_input
+    post_dispatch_input(*pop(0))
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 248, in post_dispatch_input
+    listener.dispatch('on_motion', etype, me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\core\window\__init__.py", line 1412, in on_motion
+    self.dispatch('on_touch_down', me)
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\core\window\__init__.py", line 1428, in on_touch_down
+    if w.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\screenmanager.py", line 1198, in on_touch_down
+    return super(ScreenManager, self).on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\relativelayout.py", line 297, in on_touch_down
+    ret = super(RelativeLayout, self).on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\screenmanager.py", line 1198, in on_touch_down
+    return super(ScreenManager, self).on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\relativelayout.py", line 297, in on_touch_down
+    ret = super(RelativeLayout, self).on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 545, in on_touch_down
+    if child.dispatch('on_touch_down', touch):
+  File "kivy\_event.pyx", line 709, in kivy._event.EventDispatcher.dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\behaviors\ripple_behavior.py", line 255, in on_touch_down
+    super().on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\button.py", line 1092, in on_touch_down
+    return super().on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\button.py", line 969, in on_touch_down
+    return super().on_touch_down(touch)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\behaviors\button.py", line 151, in on_touch_down
+    self.dispatch('on_press')
+  File "kivy\_event.pyx", line 705, in kivy._event.EventDispatcher.dispatch
+  File "kivy\_event.pyx", line 1248, in kivy._event.EventObservers.dispatch
+  File "kivy\_event.pyx", line 1132, in kivy._event.EventObservers._dispatch
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 57, in custom_callback
+    exec(__kvlang__.co_value, idmap)
+  File "<string>", line 59, in <module>
+TypeError: delete_all() missing 1 required positional argument: 'obj'
