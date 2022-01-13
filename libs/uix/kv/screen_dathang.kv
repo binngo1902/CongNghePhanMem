@@ -1,3 +1,33 @@
 <ScreenDatHang>:
-    MDBoxLayout:
-        md_bg_color: 1,1,1,1
+    MDBoxLayout: 
+        size_hint: (1,1)
+        orientation: 'vertical'
+        MDBoxLayout:
+            id: bigbox_dathang
+            orientation: 'vertical'
+            size_hint: (1,0.8)
+            spacing: 10
+        
+        MDBoxLayout:
+            size_hint: (1,0.1)
+            orientation: 'horizontal'
+            spacing: 5
+
+            MDLabel: 
+                text: 'Tiền mặt'
+            MDCheckbox:
+                group: "group"
+            MDLabel:
+                text: 'Chuyển khoản' 
+            MDCheckbox:
+                group: "group"
+                
+
+            Widget: 
+                size_hint_x:1
+        
+            MDRaisedButton:
+                text: "Đặt hàng"
+                on_release: root.open_dialog() 
+
+       

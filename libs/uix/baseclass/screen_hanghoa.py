@@ -10,7 +10,8 @@ class ScreenHangHoa(MDBoxLayout):
         Clock.schedule_once(self.load_data)
     def load_data(self,obj):
         data_tables = MDDataTable(
-            size_hint=(1, 1),
+            pos_hint={'center_x': 0.5 , 'center_y': 0.5 },
+            size_hint=(0.8, 0.9),
             column_data=[
                 ("Mã hàng hóa", dp(50)),
                 ("Tên hàng hóa", dp(50)),

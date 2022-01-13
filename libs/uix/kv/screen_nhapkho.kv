@@ -1,56 +1,15 @@
 <ScreenNhapKho>:
-    
     MDBoxLayout: 
-        orientation: 'vertical'
         size_hint: (1,1)
-        MDTextField:
-            id: ma_hanghoa
-            hint_text: "Mã hàng hóa 1"
-            font_size: 15
-        MDTextField:
-            id: ten_hanghoa
-            hint_text: "Tên hàng hóa"
-            font_size: 15
-        MDTextField:
-            id: sl_hanghoa
-            hint_text: "Số lượng"
-            input_filter: 'int'
-            font_size: 15
-        BoxLayout:
-            size_hint_y: None
-            height: dp(5)
-        MDTextField:
-            id: ma_hanghoa2
-            hint_text: "Mã hàng hóa 2"
-            font_size: 15
-        MDTextField:
-            id: ten_hanghoa2
-            hint_text: "Tên hàng hóa"
-            font_size: 15
-        MDTextField:
-            id: sl_hanghoa2
-            hint_text: "Số lượng"
-            input_filter: 'int'
-            font_size: 
-        BoxLayout:
-            size_hint_y: None
-            height: dp(5)
-        MDTextField:
-            id: ma_hanghoa3
-            hint_text: "Mã hàng hóa 3"
-            font_size: 15
-        MDTextField:
-            id: ten_hanghoa3
-            hint_text: "Tên hàng hóa"
-            font_size: 15
-        MDTextField:
-            id: sl_hanghoa3
-            hint_text: "Số lượng"
-            input_filter: 'int'
-            font_size: 15
+        orientation: 'vertical'
         MDBoxLayout:
+            id: bigbox
+            orientation: 'vertical'
+            size_hint: (1,0.9)
+            spacing: 10
+        MDBoxLayout:
+            size_hint: (1,0.1)
             orientation: 'horizontal'
-            halign: 'right'
             spacing: 10
             Widget: 
                 size_hint_x:1
@@ -59,3 +18,95 @@
                 on_press: root.delete_all()
             MDRaisedButton:
                 text: "Thêm vào kho"
+
+
+
+ # MDBoxLayout:
+        #     orientation: 'horizontal'
+        #     size_hint: (1,0.2)
+        #     spacing: 20
+        #     MDTextField:
+        #         id: ma_hanghoa
+        #         hint_text: "Mã hàng hóa 1"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: ten_hanghoa
+        #         hint_text: "Tên hàng hóa"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: sl_hanghoa
+        #         hint_text: "Số lượng"
+        #         input_filter: 'int'
+        #         font_size: 15
+        # MDBoxLayout:
+        #     orientation: 'horizontal'
+        #     size_hint: (1,0.2)
+        #     spacing: 20
+
+        #     MDTextField:
+        #         id: ma_hanghoa2
+        #         hint_text: "Mã hàng hóa 2"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: ten_hanghoa2
+        #         hint_text: "Tên hàng hóa"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: sl_hanghoa2
+        #         hint_text: "Số lượng"
+        #         input_filter: 'int'
+        #         font_size: 15
+        # MDBoxLayout:
+        #     orientation: 'horizontal'
+        #     size_hint: (1,0.2)
+        #     spacing: 20
+
+        #     MDTextField:
+        #         id: ma_hanghoa3
+        #         hint_text: "Mã hàng hóa 3"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: ten_hanghoa3
+        #         hint_text: "Tên hàng hóa"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: sl_hanghoa3
+        #         hint_text: "Số lượng"
+        #         input_filter: 'int'
+        #         font_size: 15
+        # MDBoxLayout:
+        #     orientation: 'horizontal'
+        #     size_hint: (1,0.2)
+        #     spacing: 20
+
+        #     MDTextField:
+        #         id: ma_hanghoa4
+        #         hint_text: "Mã hàng hóa 4"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: ten_hanghoa4
+        #         hint_text: "Tên hàng hóa"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: sl_hanghoa4
+        #         hint_text: "Số lượng"
+        #         input_filter: 'int'
+        #         font_size: 15
+        # MDBoxLayout:
+        #     orientation: 'horizontal'
+        #     size_hint: (1,0.2)
+        #     spacing: 20
+
+        #     MDTextField:
+        #         id: ma_hanghoa5
+        #         hint_text: "Mã hàng hóa 5"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: ten_hanghoa5
+        #         hint_text: "Tên hàng hóa"
+        #         font_size: 15
+        #     MDTextField:
+        #         id: sl_hanghoa5
+        #         hint_text: "Số lượng"
+        #         input_filter: 'int'
+        #         font_size: 15
