@@ -3,13 +3,22 @@ from libs.applibs import utils
 from kivy.clock import Clock
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
+from kivymd.uix.screen import MDScreen
+
+from ApiWeb import ApiWeb
 utils.load_kv("screen_hanghoa.kv")
-class ScreenHangHoa(MDBoxLayout):
+class ScreenHangHoa(MDScreen):
     def __init__(self, **kwargs):
         super(ScreenHangHoa, self).__init__(**kwargs)
+        self.api_web = ApiWeb()
+    def on_enter(self):
         Clock.schedule_once(self.load_data)
-    def load_data(self,obj):
-        data_tables = MDDataTable(
+    def load_data(self,obj=""):
+        self.ids.hanghoa.clear_widgets()
+        data=(self.api_web.get_hanghoa())
+        self.data_tables = MDDataTable(
+            use_pagination=True,
+            rows_num=6,
             pos_hint={'center_x': 0.5 , 'center_y': 0.5 },
             size_hint=(0.8, 0.9),
             column_data=[
@@ -18,30 +27,6 @@ class ScreenHangHoa(MDBoxLayout):
                 ("Số lượng ", dp(50)),
                
             ],
-            row_data=[
-                # The number of elements must match the length
-                # of the `column_data` list.
-                (
-                    "1",
-                    ("alert", [255 / 256, 165 / 256, 0, 1], "No Signal"),
-                    "Astrid: NE shared managed",
-                    
-                ),
-                (
-                    "2",
-                    ("alert-circle", [1, 0, 0, 1], "Offline"),
-                    "Cosmo: prod shared ares",
-                   
-                ),
-                (
-                    "3",
-                    (
-                        "checkbox-marked-circle",
-                        [39 / 256, 174 / 256, 96 / 256, 1],
-                        "Online",
-                    ),
-                    "Phoenix: prod shared lyra-lists",
-                ),
-            ],
+            row_data=data
         )
-        self.ids.hanghoa.add_widget(data_tables)
+        self.ids.hanghoa.add_widget(self.data_tables)

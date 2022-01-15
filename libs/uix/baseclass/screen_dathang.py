@@ -4,16 +4,17 @@ from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.label import MDLabel
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.dialog import MDDialog
+from kivymd.uix.screen import MDScreen
 
 from libs.applibs import utils
 
 utils.load_kv("screen_dathang.kv")
-class ScreenDatHang(MDBoxLayout):
-    def __init__(self, **kwargs):
-        super(ScreenDatHang, self).__init__(**kwargs)
+class ScreenDatHang(MDScreen):
+    def on_enter(self):
         Clock.schedule_once(self.load_widget)
       
     def load_widget(self,obj):
+        self.ids.bigbox_dathang.clear_widgets()
         for i in range(1,9):
             box = MDBoxLayout(
                 
