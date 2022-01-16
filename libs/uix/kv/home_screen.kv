@@ -1,9 +1,9 @@
 #: import ScreenHangHoa libs.uix.baseclass.screen_hanghoa.ScreenHangHoa
 #: import ScreenNhapKho libs.uix.baseclass.screen_nhapkho.ScreenNhapKho
-#: import ScreenXuatKho libs.uix.baseclass.screen_xuatkho.ScreenXuatKho
+#: import ScreenHoaDon libs.uix.baseclass.screen_hoadon.ScreenHoaDon
 #: import ScreenDatHang libs.uix.baseclass.screen_dathang.ScreenDatHang
 #: import ScreenThongKe libs.uix.baseclass.screen_thongke.ScreenThongKe
-
+#: import ScreenChiTiet libs.uix.baseclass.screen_chitiet.ScreenChiTiet
 
 #: import NoTransition kivy.uix.screenmanager.NoTransition
 <HomeScreen>
@@ -39,9 +39,9 @@
                     on_press: src_mng.current = "dathang"
 
                 MDRaisedButton:
-                    text: "[b]XUẤT KHO[/b]"
+                    text: "[b]HÓA ĐƠN[/b]"
                     text_color: 66/255,66/255,66/255,1
-                    on_press: src_mng.current = "xuatkho"
+                    on_press: src_mng.current = "hoadon"
 
                 MDRaisedButton:
                     text: "[b]THỐNG KÊ[/b]"
@@ -64,7 +64,10 @@
                     name: "nhapkho"
                 ScreenDatHang:
                     name: "dathang"
-                ScreenXuatKho:
-                    name: "xuatkho"
+                ScreenHoaDon:
+                    name: "hoadon"
                 ScreenThongKe:
                     name: "thongke"
+                ScreenChiTiet:
+                    name: "chitiet"
+                

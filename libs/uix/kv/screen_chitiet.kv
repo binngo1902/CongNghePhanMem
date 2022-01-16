@@ -1,0 +1,82 @@
+<ScreenChiTiet>
+    MDBoxLayout: 
+        size_hint: (1,1)
+        orientation: 'vertical'
+        spacing: 20,20
+        padding: 10,10
+        MDBoxLayout: 
+            size_hint: (1,0.05)
+            MDLabel:
+                id: title
+                theme_text_color: "Custom"
+                text_color: 0,0,1,1
+                halign: "center"
+        MDSeparator:
+        ScrollView:
+            size: self.size
+            MDGridLayout:
+                id: layout_content
+                size_hint_y: None
+                cols: 4
+                row_default_height: '30dp'
+
+                size_hint_x: 1
+                row_force_default: True
+                spacing: 40,40
+                padding: 20,25
+        MDGridLayout:
+            size_hint_y:None
+            cols: 7
+            row_default_height: '30dp'
+            size_hint_x:1
+            MDLabel: 
+                text: "Tình trạng:"
+            MDLabel: 
+                text: 'Mới tạo'
+            MDCheckbox:
+                id: t1
+                group: "group"
+                on_press: root.status_delivery(1)
+            MDLabel:
+                text: 'Xuất kho' 
+            MDCheckbox:
+                id: t2
+                group: "group"
+                on_press: root.status_delivery(2)
+            MDLabel:
+                text: 'Đã giao' 
+            MDCheckbox:
+                id: t3
+                group: "group"
+                on_press: root.status_delivery(3)
+    
+            MDLabel: 
+                text: "Thanh toán:"
+            MDLabel: 
+                text: 'Chưa thanh toán'
+            MDCheckbox:
+                id: m1
+                group: "group1"
+                on_press: root.status_pay(0)
+            MDLabel:
+                text: 'Đã thanh toán' 
+            MDCheckbox:
+                id: m2
+                group: "group1"
+                on_press: root.status_pay(1)
+        MDBoxLayout:
+            size_hint: (1,0.1)
+            orientation: 'horizontal'
+            spacing: 10
+            Widget: 
+                size_hint_x:1
+            MDRaisedButton:
+                text: "Quay lại"
+                on_press: root.manager.current = "hoadon"
+            MDRaisedButton:
+                text: "Cập nhật"
+                on_press: root.update()
+
+
+
+            

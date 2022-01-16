@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 705, in _apply_rule
+    setattr(widget_set, key, value)
+  File "kivy\weakproxy.pyx", line 35, in kivy.weakproxy.WeakProxy.__setattr__
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 542, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 533, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 1253, in kivy.properties.OptionProperty.check
+ValueError: MDLabel.theme_text_color is set to an invalid option 'error'. Must be one of: ['Primary', 'Secondary', 'Hint', 'Error', 'Custom', 'ContrastParentBackground']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 31, in <module>
+    CNPM().run()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\app.py", line 950, in run
+    runTouchApp()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 347, in mainloop
+    self.idle()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\base.py", line 387, in idle
+    Clock.tick()
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\clock.py", line 733, in tick
+    self.post_idle(ts, self.idle())
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\clock.py", line 776, in post_idle
+    self._process_events()
+  File "kivy\_clock.pyx", line 616, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 645, in kivy._clock.CyClockBase._process_events
+  File "kivy\_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
+  File "D:\Python\CNPM\libs\uix\baseclass\root.py", line 50, in add_screens
+    screen_object = eval(screen_details["object"])  # calling it
+  File "<string>", line 1, in <module>
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\relativelayout.py", line 274, in __init__
+    super(RelativeLayout, self).__init__(**kw)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\floatlayout.py", line 65, in __init__
+    super(FloatLayout, self).__init__(**kwargs)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\layout.py", line 76, in __init__
+    super(Layout, self).__init__(**kwargs)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\behaviors\backgroundcolor_behavior.py", line 220, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\behaviors\backgroundcolor_behavior.py", line 178, in __init__
+    super().__init__(**kwarg)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivymd\uix\behaviors\elevation.py", line 847, in __init__
+    super().__init__(**kwargs)
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 359, in __init__
+    self.apply_class_lang_rules(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 463, in apply_class_lang_rules
+    Builder.apply(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 541, in apply
+    self._apply_rule(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 663, in _apply_rule
+    self._apply_rule(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 663, in _apply_rule
+    self._apply_rule(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 663, in _apply_rule
+    self._apply_rule(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 661, in _apply_rule
+    child.apply_class_lang_rules(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\uix\widget.py", line 463, in apply_class_lang_rules
+    Builder.apply(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 541, in apply
+    self._apply_rule(
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 710, in _apply_rule
+    raise BuilderException(rule.ctx, rule.line,
+kivy.lang.builder.BuilderException: Parser: File "<inline>", line 15:
+...
+     13:                font_size:15
+     14:                halign: "center"
+>>   15:                theme_text_color: 'error'
+     16:            MDBoxLayout:
+     17:                size_hint: (1,0.3)
+...
+ValueError: MDLabel.theme_text_color is set to an invalid option 'error'. Must be one of: ['Primary', 'Secondary', 'Hint', 'Error', 'Custom', 'ContrastParentBackground']
+  File "C:\Users\binng\anaconda3\envs\kivyconda\lib\site-packages\kivy\lang\builder.py", line 705, in _apply_rule
+    setattr(widget_set, key, value)
+  File "kivy\weakproxy.pyx", line 35, in kivy.weakproxy.WeakProxy.__setattr__
+  File "kivy\properties.pyx", line 498, in kivy.properties.Property.__set__
+  File "kivy\properties.pyx", line 542, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 533, in kivy.properties.Property.set
+  File "kivy\properties.pyx", line 1253, in kivy.properties.OptionProperty.check
+

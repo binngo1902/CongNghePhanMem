@@ -7,11 +7,12 @@ class HomeScreen(MDScreen):
     """
     Example Screen.
     """
-    def on_enter(self):
+    pass
+    # def on_enter(self):
 
-        Clock.schedule_once(self.render)
+    #     Clock.schedule_once(self.render)
 
-    def render(self,obj):
-        print(self.ids.src_mng.get_screen('hanghoa'))
+    # def render(self,obj):
+    #     print(self.ids.src_mng.get_screen('hanghoa'))
 
    

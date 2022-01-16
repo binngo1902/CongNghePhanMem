@@ -5,7 +5,7 @@ from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivymd.uix.screen import MDScreen
 
-from ApiWeb import ApiWeb
+from apiWeb import ApiWeb
 utils.load_kv("screen_hanghoa.kv")
 class ScreenHangHoa(MDScreen):
     def __init__(self, **kwargs):
@@ -22,9 +22,9 @@ class ScreenHangHoa(MDScreen):
             pos_hint={'center_x': 0.5 , 'center_y': 0.5 },
             size_hint=(0.8, 0.9),
             column_data=[
-                ("Mã hàng hóa", dp(50)),
-                ("Tên hàng hóa", dp(50)),
-                ("Số lượng ", dp(50)),
+                ("Mã hàng hóa", dp(70)),
+                ("Tên hàng hóa", dp(70)),
+                ("Số lượng ", dp(70)),
                
             ],
             row_data=data

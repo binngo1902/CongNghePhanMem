@@ -27,4 +27,5 @@ class CNPM(MDApp):  # NOQA: N801
         self.theme_cls.theme_style = "Light"
 
     def build(self):
+        MDApp.chitiet = ""
         return Root()

@@ -1,3 +1,48 @@
 <ScreenThongke>:
-    MDBoxLayout:
-        md_bg_color: 3/255,3/255,1,1
+    MDBoxLayout: 
+        size_hint: (1,1)
+        orientation: 'vertical'
+        spacing: 20,20
+        padding: 10,10
+        MDBoxLayout: 
+            orientation: 'vertical'
+            size_hint: (1,0.5)
+            MDLabel:
+                size_hint_y: 0.1
+                id: error
+                font_size:15
+                halign: "center"
+                theme_text_color: 'Error'
+            MDBoxLayout:
+                size_hint: (1,0.3)
+                MDTextField:
+                    id: month
+                    hint_text:"Chọn tháng"
+                    input_filter: 'int'
+                    font_size:15
+                MDTextField:
+                    id: year
+                    hint_text:"Chọn năm"
+                    input_filter: 'int'
+                    font_size:15
+                MDRaisedButton:
+                    text: "Xem"
+                    text_color: 66/255,66/255,66/255,1
+                    font_size: 15
+                    on_press: root.view_thongke()
+                    
+                
+            MDLabel:
+                id: title
+                text: "Doanh thu tháng"
+                theme_text_color: "Custom"
+                halign: "center"
+                font_size: 20
+                text_color: 0,0,1,1
+            MDLabel:
+                id: title
+                text: "Doanh th2u"
+                theme_text_color: "Custom"
+                halign: "center"
+                text_color: 0,0,1,1
+        MDSeparator:

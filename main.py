@@ -1,6 +1,9 @@
 import os
 import sys
-
+from kivy.config import Config
+Config.set('graphics', 'resizable', False)
+Config.set('graphics', 'width', '900')
+Config.set('graphics', 'height', '600')
 root_dir = os.path.split(os.path.abspath(sys.argv[0]))[0]
 sys.path.insert(0, os.path.join(root_dir, "libs", "applibs"))
 

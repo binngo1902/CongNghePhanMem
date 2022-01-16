@@ -13,16 +13,21 @@
             orientation: 'horizontal'
             spacing: 5
             MDTextField:
+                id: khach_hang
                 hint_text:"Khách hàng"
                 font_size:15
             MDLabel: 
                 text: 'Tiền mặt'
             MDCheckbox:
                 group: "group"
+                on_press: root.method_pay(1)
             MDLabel:
                 text: 'Chuyển khoản' 
             MDCheckbox:
                 group: "group"
+                on_press: root.method_pay(2)
+
+
                 
 
             Widget: 

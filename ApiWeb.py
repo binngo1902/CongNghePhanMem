@@ -12,6 +12,19 @@ class ApiWeb():
         print(res.ok)
         return res.json()['hanghoa']
 
+    def get_hoadon(self):
+        api_hoadon = "/hoadon"
+        endpoint = f"{self.url}{api_hoadon}"
+        res = requests.get(endpoint)
+        print(res.ok)
+        return res.json()['hoadon']
+
+    def get_chitiet(self,id):
+        api_hoadon = f"/chitiet/{id}"
+        endpoint = f"{self.url}{api_hoadon}"
+        res = requests.get(endpoint)
+        print(res.ok)
+        return res.json()
 
     def insert_hanghoa(self,json):
         print(json)
@@ -24,16 +37,40 @@ class ApiWeb():
             return "error request"
 
 
-    def user_profile(self,token): # get profile user
-        a= 0
-        api_show = f"/api/show/profile?secret={self.secret_key}"
-        headers = {"Authorization": f"Bearer {token}"}
-        endpoint = f"{self.url}{api_show}"
-        res = requests.post(endpoint,headers = headers)
-        if (hasattr(res, 'json')):
-            return res.json()
+    def update_hoadon(self,id_hoadon,status_vanchuyen,status_thanhtoan,flag_xuatkho,flag_thanhtoan):
+        api_hanghoa = "/hoadon/update"
+        endpoint = f"{self.url}{api_hanghoa}"
+        data = {
+            'id_hoadon': id_hoadon,
+            'status_vanchuyen': int(status_vanchuyen),
+            'status_thanhtoan': int(status_thanhtoan),
+            'flag_xuatkho': flag_xuatkho,
+            'flag_thanhtoan': flag_thanhtoan }
+        print(data)
+        res = requests.post(endpoint,data=json.dumps(data))
+        if res.ok == True:
+            return res.json()['Notify']
         else:
-            return False
+            return "error request"
+
+    def check_hanghoa(self,json):
+        api_hanghoa = "/kiemtra"
+        endpoint = f"{self.url}{api_hanghoa}"
+        res = requests.post(endpoint,data=json)
+        if res.ok == True:
+            return res.json()['Notify']
+        else:
+            return "error request"
+
+    def order_hanghoa(self,json):
+        api_hanghoa = "/dathang"
+        endpoint = f"{self.url}{api_hanghoa}"
+        res = requests.post(endpoint,data=json)
+        if res.ok == True:
+            return res.json()['Notify']
+        else:
+            return "error request"
+
 
         
         
