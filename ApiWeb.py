@@ -32,11 +32,12 @@ class ApiWeb():
         endpoint = f"{self.url}{api_hanghoa}"
         res = requests.post(endpoint,data=json)
         if res.ok == True:
+            print("ok123")
             return res.json()['Notify']
         else:
             return "error request"
 
-
+    
     def update_hoadon(self,id_hoadon,status_vanchuyen,status_thanhtoan,flag_xuatkho,flag_thanhtoan):
         api_hanghoa = "/hoadon/update"
         endpoint = f"{self.url}{api_hanghoa}"

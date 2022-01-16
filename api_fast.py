@@ -188,10 +188,11 @@ async def insert_hanghoa(list: list_hanghoa):
     try:
         sql = "INSERT INTO hanghoa Values (%s,%s,%s) "
         sql2 = "UPDATE hanghoa Set so_luong = %s WHERE id = %s"
+        print(list)
         for i in list.danhsach:
+            print(i)
             cursor.execute('Select * from hanghoa where id="'+i.id+'"')
             exist_hang = cursor.fetchone()
-            print(len(exist_hang))
             if (exist_hang):
                 
                 value = (i.so_luong+exist_hang[2],i.id)
@@ -203,6 +204,7 @@ async def insert_hanghoa(list: list_hanghoa):
         db.commit()
         return {"Notify": 1}
     except Exception as e:
+        print(e)
         db.rollback()
         return {"Notify": e}
       
@@ -244,17 +246,17 @@ async def order_hanghoa(order: order):
         # tạo hóa đơn
         sql1 = 'INSERT INTO hoadon (id_daily,tong_tien,tong_sanpham,thanh_toan,status_vanchuyen,status_thanhtoan) Values (%s,%s,%s,%s,%s,%s)'
         if order.thanh_toan == "Chuyển khoản":
-            status_thanhtoan = 'Đã chuyển khoản'
+            status_thanhtoan = 1
         else:
-            status_thanhtoan = 'Chưa thanh toán'
+            status_thanhtoan = 0
 
-        value1 = (id_khachhang,order.tong_tien,order.tong_sanpham,order.thanh_toan,'Mới tạo',status_thanhtoan)
+        value1 = (id_khachhang,order.tong_tien,order.tong_sanpham,order.thanh_toan,0,status_thanhtoan)
 
         cursor.execute(sql1,value1)
         
         # lấy id hóa đơn
         sql2 = 'Select id from hoadon where id_daily= %s and tong_tien = %s and tong_sanpham = %s and thanh_toan = %s and status_vanchuyen = %s and status_thanhtoan = %s'
-        value2 = (id_khachhang,order.tong_tien,order.tong_sanpham,order.thanh_toan,'Mới tạo',status_thanhtoan)
+        value2 = (id_khachhang,order.tong_tien,order.tong_sanpham,order.thanh_toan,0,status_thanhtoan)
         cursor.execute(sql2,value2)
         id_hoadon = cursor.fetchone()[0]
         # thêm hàng vào chi tiết hóa đơn
